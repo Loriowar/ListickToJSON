@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Backup Listick.ru",
+  "version": "0.1.2",
+  "description": "Расширение для перевода текстовых заметок с сайта Listick.ru в сериализованный формат (JSON или YAML).",
+  
+  "icons": {
+    "16": "note_16x16.png",
+    "32": "note_32x32.png",
+    "48": "note_48x48.png",
+    "128": "note_128x128.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://listick.ru/*",
+    "https://listick.ru/*"
+  ],
+
+  "browser_action": {
+    "default_title": "Backup Listick.ru",
+    "default_icon": "note_48x48.png",
+    "default_popup": "listick_backup_dialog.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  
+  "content_scripts": [ {
+    "js": [ "jquery-2.1.3.min.js", "background.js", "js-yaml.min.js", "paypal-button.min.js" ],
+    "matches": [ "http://listick.ru/*", "https://listick.ru/*"]
+  }]
+}

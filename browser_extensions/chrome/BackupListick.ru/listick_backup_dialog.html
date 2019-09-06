@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="js-yaml.min.js"></script>
+    <script src="listick-backup.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <h3>Преобразование текстового содержимого Listick.ru в сериализованный формат</h3>
+    <button id="btn_parse_listick" type="submit" name="Parse Listick" style="margin-bottom: 1em">Преобразовать</button>
+    <br>
+    <span>
+      <p style="display: inline-block;">Доступные форматы:</p>
+      <input class="format_selector" type="radio" name="format" value="json" checked> JSON
+      <input class="format_selector" type="radio" name="format" value="yaml"> YAML
+    </span>
+    <br>
+    <div style="padding-top: 0.5em;">
+      <img id="loading" src="loading.gif" style="display: none;">
+      <div id="messages" style="min-height: 1em; display: inline; vertical-align: top;"></div>
+    </div>
+    <div id="result"></div>
+    <br>
+    <textarea readonly id="result_text_area" cols="100" rows="10"></textarea>
+    <br>
+    <h3 title="Раскрывающееся меню с вариантами благодарности"><a id="dropdown_toggle" href="#">Простимулировать развитие плагина и/или поблагодарить автора</a></h3>
+    <div id="donate_variants_container" style="display:none">
+      <h3>при помощи Яндекс.Денег или кредитной карты</h3>
+      <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=41001149767637&quickpay=donate&payment-type-choice=on&default-sum=100&targets=%D0%9D%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+Backup+Listick.ru&target-visibility=on&project-name=Chrome+extension+%22Backup+Listick.ru%22&project-site=&button-text=05&successURL=" width="510" height="131"></iframe>
+      <h3>при помощи PayPal</h3>
+      <script async="async" src="paypal-button.min.js?merchant=loriowar@gmail.com" 
+              data-button="donate" 
+              data-name="Chrome extension &quot;Backup Listick.ru&quot;" 
+              data-quantity="1" 
+              data-amount-editable="100" 
+              data-currency="RUB">
+      </script>
+    </div>
+  </body>
+</html>
